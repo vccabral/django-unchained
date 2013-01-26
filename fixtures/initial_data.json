@@ -3,16 +3,16 @@
         "pk": 1, 
         "model": "sites.site", 
         "fields": {
-            "domain": "localhost:8000", 
-            "name": "example.com [localhost]"
+            "domain": "www.cibox.com", 
+            "name": "www.cibox.com"
         }
     },
     {
         "pk": 2, 
         "model": "sites.site", 
         "fields": {
-            "domain": "example.com", 
-            "name": "example.com"
+            "domain": "www.cibox.com", 
+            "name": "www.cibox.com"
         }
     }
 ]
