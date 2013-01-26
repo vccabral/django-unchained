@@ -9,4 +9,6 @@ $ pip install -r requirements.txt
 
 $ python manage.py syncdb
 
-$ python manage.py runserver
+$ python manage.py runserver 0.0.0.0:8000
+
+visit http://localhost:8111/ on your main machine
