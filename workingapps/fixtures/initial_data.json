@@ -1,0 +1,1 @@
+[{"pk": 1, "model": "workingapps.database", "fields": {"name": "postgres"}}, {"pk": 1, "model": "workingapps.framework", "fields": {"name": "django"}}, {"pk": 1, "model": "workingapps.sourcecontrol", "fields": {"name": "github"}}]
