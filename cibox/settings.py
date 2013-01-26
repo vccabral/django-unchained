@@ -152,6 +152,8 @@ INSTALLED_APPS = [
     "account",
     "metron",
     "south",    
+    "jenkins",
+
     # project
     "publicface",
 ]
