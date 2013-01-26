@@ -1,6 +1,9 @@
 {% extends "site_base.html" %}
 
 {% block body %}
-
-
+<ul>
+	{% for project in projects %}
+		<li>{{ project }}</li>
+	{% endfor %}
+</ul>
 {% endblock %}
