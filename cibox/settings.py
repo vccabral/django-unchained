@@ -154,6 +154,7 @@ INSTALLED_APPS = [
 
     # project
     "publicface",
+    "workingapps",
 ]
 
 PROJECT_APPS = ("publicface",)
