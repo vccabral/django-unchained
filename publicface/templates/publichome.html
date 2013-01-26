@@ -1,0 +1,24 @@
+{% extends "site_base.html" %}
+{% load metron_tags %}
+{% load i18n %}
+
+{% block head_title %}I'm a title{% endblock %}
+
+{% block body %}
+<h2>I'm a body header.</h2>
+<h4>I'm a smaller body header</h4>
+<p>I'm a paragraph</p>
+{% endblock %}
+
+{% block extra_head_base %}
+    {% block extra_head %}{% endblock %}
+{% endblock %}
+
+{% block footer %}
+    {% include "_footer.html" %}
+{% endblock %}
+
+{% block extra_body_base %}
+    {% analytics %}
+    {% block extra_body %}{% endblock %}
+{% endblock %}
