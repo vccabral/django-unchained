@@ -1,6 +1,7 @@
 from django.shortcuts import render_to_response
 from django.template.context import RequestContext
 from workingapps.forms import ProjectCreateForm
+from workingapps.models import Project
 
 def create(request):
     if request.method == 'POST':
@@ -12,4 +13,5 @@ def create(request):
     return render_to_response('project_create.html', {'form': form} , context_instance=RequestContext(request))
 
 def index(request):
-    return render_to_response('projects.html', context_instance=RequestContext(request))
+    projects = Project.objects.filter(admin=request.user)
+    return render_to_response('projects.html', locals(), context_instance=RequestContext(request))
