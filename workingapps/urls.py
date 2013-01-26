@@ -5,4 +5,5 @@ from django.contrib.auth.decorators import login_required
 
 urlpatterns = patterns('',
                        url(r'^$', 'workingapps.views.index', name='project_index'),
+                       url(r"^create/$", 'workingapps.views.create', name='create')
                        )
