@@ -130,6 +130,7 @@ WSGI_APPLICATION = "cibox.wsgi.application"
 TEMPLATE_DIRS = [
     os.path.join(PACKAGE_ROOT, "templates"),
     os.path.join(PROJECT_ROOT, "publicface", "templates"),
+    os.path.join(PROJECT_ROOT, "workingapps", "templates"),
 ]
 
 INSTALLED_APPS = [
