@@ -151,8 +151,9 @@ INSTALLED_APPS = [
     # external
     "account",
     "metron",
-    
+    "south",    
     # project
+    "publicface",
 ]
 
 # A sample logging configuration. The only tangible logging
