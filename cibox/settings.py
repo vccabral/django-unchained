@@ -152,11 +152,13 @@ INSTALLED_APPS = [
     "account",
     "metron",
     "south",    
-    "jenkins",
+    "django_jenkins",
 
     # project
     "publicface",
 ]
+
+PROJECT_APPS = ("publicface",)
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
