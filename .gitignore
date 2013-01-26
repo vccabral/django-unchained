@@ -13,3 +13,7 @@ dist/*
 reports/*
 pip-log.txt
 .vagrant
+*.class
+.sass-cache/
+.idea/
+.settings/
