@@ -1,25 +1,43 @@
 from django.db import models
 from django.contrib.auth.models import User
-# Create your models here.
 
-class Database(models.Model):
+class BaseNamedModel(models.Model):
+    class Meta:
+        abstract = True
+    __str__ = lambda self: self.name
+
+class BaseUrledModel(models.Model):
+    class Meta:
+        abstract = True
+    __str__ = lambda self: self.url
+
+
+class Database(BaseNamedModel):
     name = models.CharField(max_length=100)
 
-class Framework(models.Model):
+class Framework(BaseNamedModel):
     name = models.CharField(max_length=100)
 
-class SourceControl(models.Model):
+class SourceControl(BaseNamedModel):
     name = models.CharField(max_length=100)
 
-class JenkinsServer(models.Model):
-    url = models.CharField(max_length=100)
+class JenkinsServer(BaseUrledModel):
+    url = models.CharField(max_length=500)
     is_active = models.BooleanField(default=False)
 
-class GitRepo(models.Model):
-    url = models.CharField(max_length=100)
+class GitRepo(BaseUrledModel):
+    url = models.CharField(max_length=500)
+    is_active = models.BooleanField(default=False)
+
+class ProductionServer(BaseUrledModel):
+    url = models.CharField(max_length=500)
+    is_active = models.BooleanField(default=False)
+
+class ProductionDatabase(BaseUrledModel):
+    url = models.CharField(max_length=500)
     is_active = models.BooleanField(default=False)
     
-class Project(models.Model):
+class Project(BaseNamedModel):
     name = models.CharField(max_length=100)
     admin = models.ForeignKey(User)
     database = models.ForeignKey(Database)
@@ -27,3 +45,6 @@ class Project(models.Model):
     source_control = models.ForeignKey(SourceControl)
     jenkins_server = models.ForeignKey(JenkinsServer)
     git_repo = models.ForeignKey(GitRepo)
+    production_server = models.ForeignKey(ProductionServer,blank=True)
+    production_database = models.ForeignKey(ProductionDatabase,blank=True)
+    __str__ = lambda self: self.name
