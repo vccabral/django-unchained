@@ -22,19 +22,19 @@ class SourceControl(BaseNamedModel):
     name = models.CharField(max_length=100)
 
 class JenkinsServer(BaseUrledModel):
-    url = models.CharField(max_length=500)
+    url = models.CharField(max_length=500,blank=True)
     is_active = models.BooleanField(default=False)
 
 class GitRepo(BaseUrledModel):
-    url = models.CharField(max_length=500)
+    url = models.CharField(max_length=500,blank=True)
     is_active = models.BooleanField(default=False)
 
 class ProductionServer(BaseUrledModel):
-    url = models.CharField(max_length=500)
+    url = models.CharField(max_length=500,blank=True)
     is_active = models.BooleanField(default=False)
 
 class ProductionDatabase(BaseUrledModel):
-    url = models.CharField(max_length=500)
+    url = models.CharField(max_length=500,blank=True)
     is_active = models.BooleanField(default=False)
     
 class Project(BaseNamedModel):

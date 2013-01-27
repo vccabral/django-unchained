@@ -1,4 +1,4 @@
-{% extends "banner_base.html" %}
+{% extends "site_base.html" %}
 
 {% load i18n %}
 
@@ -6,34 +6,19 @@
 
 {% block body_class %}home{% endblock %}
 
-{% block banner %}
-    <h1>Welcome to CIBOX.com</h1>
-    <p>
-        {% blocktrans %}
-        <b>Pinax</b> is a <a href="http://djangoproject.com/">Django</a>
-        project intended to provide a starting point for websites. By
-        integrating numerous reusable Django apps to take care of the
-        things that many sites have in common, it lets you focus on what
-        makes your site different.
-        {% endblocktrans %}
-    </p>
-    
-    <h2>About Account Project</h2>
-    <p>
-        {% blocktrans %}
-        In addition to what is provided by the "zero" project, this project
-        provides thorough integration with django-user-accounts, adding
-        comprehensive account management functionality. It is a foundation
-        suitable for most sites that have user accounts.
-        {% endblocktrans %}
-    </p>
-    
-    {% if user.is_authenticated %}
-        {% url what_next as what_next_url %}
-        <p class="what_next">{% blocktrans %}Wondering <a href="{{ what_next_url }}" class="btn primary large">What Next</a>?{% endblocktrans %}</p>
-    {% else %}
-        {% url account_login as login_url %}
-        {% url account_signup as signup_url %}
-        <p>{% blocktrans %}You can <a href="{{ login_url }}" class="btn">Log In</a> or <a href="{{ signup_url }}" class="btn primary">Sign Up</a> to try out the site.{% endblocktrans %}</p>
-    {% endif %}
+{% block body %}
+	<div class="well">
+	    <h1>Welcome to CIBOX.com</h1>
+	    <p>
+	        {% blocktrans %}
+	        <b>CIBox.com</b> is a continuous integration procurement tool.
+	        If you need a continuous integration environment for a short term
+	        project and want it setup properly and efficiently then this
+	        is the place for you. Sign up, add in some AWS credentials,
+	        select the continous integration rules and reference architecture
+	        and you will have a full fledged and well setup CI environment in no
+	        time. 
+	        {% endblocktrans %}
+	    </p>
+	</div>
 {% endblock %}

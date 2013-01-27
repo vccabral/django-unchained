@@ -11,6 +11,8 @@ ADMINS = [("victor", "vccabral@gmail.com"),]
 
 MANAGERS = ADMINS
 
+AUTH_PROFILE_MODULE = "publicface.UserProfile"
+
 USE_VAGRANT = (os.environ.get("USE_VAGRANT","True") != "False")
 
 if USE_VAGRANT:

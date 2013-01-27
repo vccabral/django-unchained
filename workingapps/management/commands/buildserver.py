@@ -3,14 +3,17 @@ from boto.ec2.connection import EC2Connection
 from workingapps.models import JenkinsServer
 
 class Command(BaseCommand):
-    args = ''
+    args = 'create to create all of the build servers pending'
     help = 'creats all pending CI build servers'
 
     def handle(self, *args, **options):
-        if args[0] == "create":
-            for pending_ci_server in JenkinsServer.objects.filter(is_active=False):
-                print("create ci box %" % str(pending_ci_server))
+        if len(args) > 0: 
+            if args[0] == "create":
+                for pending_ci_server in JenkinsServer.objects.filter(is_active=False):
+                    print("create ci box %" % str(pending_ci_server))
                 #fix me - use boto to create a new CI box
+            else:
+                print("There were no valid arguments")
         else:
-            pass
+            print("There were no valid arguments")
             #fix me add error checking
