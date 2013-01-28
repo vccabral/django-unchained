@@ -208,3 +208,5 @@ ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 2
 
 AWS_SECRET_ACCESS_KEY = os.environ.get("secret_key")
 AWS_ID = os.environ.get("aws_id")
+GIT_LOGIN = os.environ.get("git_user")
+GIT_PASSWORD = os.environ.get("git_password")

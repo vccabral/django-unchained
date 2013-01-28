@@ -1,6 +1,7 @@
 *.py[co]
 .project
 .pydevproject
+venv/
 *~
 *.db
 *.orig
