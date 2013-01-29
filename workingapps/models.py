@@ -23,6 +23,7 @@ class SourceControl(BaseNamedModel):
 class JenkinsServer(BaseUrledModel):
     url = models.CharField(max_length=500,blank=True)
     is_active = models.BooleanField(default=False)
+    __str__ = lambda self: str(self.pk)
 
 class GitRepo(BaseUrledModel):
     url = models.CharField(max_length=500,blank=True)
@@ -47,4 +48,4 @@ class Project(BaseNamedModel):
     git_repo = models.ForeignKey(GitRepo)
     production_server = models.ForeignKey(ProductionServer)
     production_database = models.ForeignKey(ProductionDatabase)
-    status = lambda self: all([self.jenkins_server.is_active,self.git_repo.is_active,production_server.is_active, self.production_database.is_active])
+    status = lambda self: all([self.jenkins_server.is_active,self.git_repo.is_active, self.production_server.is_active, self.production_database.is_active])
