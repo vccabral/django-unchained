@@ -18,7 +18,8 @@ class Command(BaseCommand):
                         reservation = conn.run_instances(image_id='ami-03c1736a',
                                            key_name='ciboxbuild',
                                            instance_type='m1.small',
-                                           security_groups=['default'])
+                                           security_groups=['default'],
+                                           user_data="export github_repo=\""+cur_git_repo.url+"\"")
                         found_instance = False
                         while not found_instance:
                             time.sleep(30)
